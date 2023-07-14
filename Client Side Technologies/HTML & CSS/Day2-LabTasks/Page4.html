@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link href="../../19thOfMarch2023(Day1)/lab/main.css" rel="styleSheet"/>
+</head>
+
+<body>
+    <form action="../../19thOfMarch2023(Day1)/lab/Page1.html">
+        <!-- <fieldset> -->
+            <!-- <legend></legend> -->
+            <table>
+                <tr>
+                    <td>F<span>i</span>rst Name</td>
+                    <td class="in"><input type="text" name="fn" accesskey="i"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td class="in"><input type="text" name="ln"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td class="in"><input type="password" name="pass"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" id="gen">Gender</td>
+                    <td><input type="radio" name="gender" value="Male"> Male</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="gender" value="Female"> Female</td>
+                </tr>
+                <tr>
+                    <td>Birthday: <select>
+                            <!-- <optgroup label="[Select a Month]"> -->
+                                <option>[Select a Month]</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>Abril</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            <!-- </optgroup> -->
+                        </select>
+                    </td>
+                    <td class="in num">
+                        <input type="number" placeholder="dd" name="day">
+                        <input type="number" placeholder="yyyy" name="year">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="int">Interests</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Interests" value="Sports"> Sports</td>
+                    <td><input type="checkbox" name="Interests" value="Music"> Music</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Interests" value="Books"> Books</td>
+                    <td><input type="checkbox" name="Interests" value="Computer Stuff"> Computer Stuff</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="Interests" value="Fashion"> Fashion</td>
+                    <td><input type="checkbox" name="Interests" value="Movies"> Movies</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        <!-- </fieldset> -->
+    </form>
+</body>
+
+</html>
