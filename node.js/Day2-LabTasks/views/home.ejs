@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>School</th>
+                <th>Sex</th>
+                <th>Address</th>
+                <th>familySize</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(let i=0; i < Data.length; i++) {%>
+                <tr>
+                    <td>
+                        <%=Data[i].school%>
+                    </td>
+                    <td>
+                        <%=Data[i].sex%>
+                    </td>
+                    <td>
+                        <%=Data[i].address%>
+                    </td>
+                    <td>
+                        <%=Data[i].famsize%>
+                    </td>
+                </tr>
+                <%}%>
+        </tbody>
+    </table>
+    <%#consol.%>
+</body>
+
+</html>
