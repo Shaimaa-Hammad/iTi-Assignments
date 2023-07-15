@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1678449530 source:f:\iti\oop\9thofmarch2023\lecture'sassighnments\main.cpp
+	<iostream>
+	<cstring>
+	<string>
+	<conio.h>
+
