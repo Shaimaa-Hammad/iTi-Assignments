@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Message</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    #greeting-form {
+      background-color: #fff;
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    select {
+      height: 40px;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script src="cookie.js"></script>
+  <script>
+    function submitForm() {
+      // Get the user's name and gender from the form
+      var name = document.forms["greetingForm"]["name"].value;
+      var age = document.forms["greetingForm"]["age"].value;
+      var label = document.querySelector('input[name="gender"]:checked + label');
+      var image = label.querySelector('img');
+      var imageUrl = image.getAttribute('src');
+
+      // Create a cookie to store the user's name
+      Cookie.create("name", name, 365);
+
+      // Get the number of visits from a cookie or set it to 1 if it doesn't exist
+      var visits = parseInt(Cookie.read("visits"));
+      if (isNaN(visits)) {
+        visits = 1;
+      }
+
+      // Increment the number of visits and store it in a cookie
+      visits++;
+      Cookie.create("visits", visits.toString(), 365);
+
+      // Construct the greeting message with profile pic and visit count
+      var message = "Hello, " + name + ". Your age is " + age +"! You have visited this site " + visits + " times. :)";
+      message = message;
+
+      // Open a new window to display the greeting message
+      var color = document.forms["greetingForm"]["color"].value;
+      var greetingWindow = window.open("", "GreetingWindow", "width=400,height=300");
+      var greeting = greetingWindow.document.createElement("div");
+      greeting.style.color = color;
+      greeting.innerHTML = message;
+      // Create a new img element
+      var profile = greetingWindow.document.createElement('img');
+      // Set the src attribute to the desired source
+      profile.setAttribute('src', imageUrl);
+      greetingWindow.document.body.appendChild(greeting);
+      greetingWindow.document.body.div.appendChild(profile);
+    }
+  </script>
+</head>
+<body>
+  <form name="greetingForm" onsubmit="submitForm(); return false;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="age">age:</label>
+    <input type="text" id="age" name="age"><br>
+
+    <label for="gender">Gender:</label><br>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male"><img src="./1.jpg" alt="Male"></label><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female"><img src="./2.jpg" alt="Female"></label><br>
+
+
+    <label for="color">Font Color:</label>
+    <select id="color" name="color">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

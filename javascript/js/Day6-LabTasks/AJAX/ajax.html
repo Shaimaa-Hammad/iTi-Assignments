@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Bands</title>
+    </head>
+
+    <body>
+        <h1>Rock Bands and Artists</h1>
+
+        <label>Band: </label>
+        <select id="bands" onchange="showArtistsNames()">
+            <option value="">Please select</option>
+        </select>
+
+        <label>Artist: </label>
+        <select id="artists" onchange="openLink()">
+            <option></option>
+        </select>
+
+        <script>
+            var data;
+            var optBand;
+            var selBand = document.getElementById('bands');
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", './rockbands.json');//json file 
+            xhr.onreadystatechange= function(){
+                if(xhr.readyState == 4){
+                    if(xhr.status >= 200 && xhr.status <300){
+                        data = JSON.parse(xhr.responseText);
+                        // console.log(data);
+                        for(var band in data){
+                            // console.log(band);
+                            optBand = document.createElement('option');
+                            optBand.text = band;
+                            optBand.value = band;
+                            selBand.appendChild(optBand);
+                        }
+                    }
+                }
+            }
+            xhr.send();
+
+            var optArtist;
+            var selArtist = document.getElementById('artists');
+            var selectedBand;
+            var artists;
+            function showArtistsNames(){
+                selArtist.innerHTML = '';
+                selectedBand = selBand.options[selBand.selectedIndex].value;
+                artists = data[selectedBand];
+                var ps = document.createElement('option');
+                ps.text = 'Please select';
+                selArtist.appendChild(ps);
+                for(var i = 0; i < artists.length; i++){
+                    optArtist = document.createElement('option');
+                    optArtist.text = artists[i].name;
+                    optArtist.value = artists[i].name;
+                    selArtist.appendChild(optArtist);
+                }
+            }
+
+            function openLink() {
+                var selectedArtist = selArtist.options[selArtist.selectedIndex].value;
+                for(var i = 0; i < artists.length; i++){
+                    if(artists[i].name === selectedArtist){
+                        window.open(artists[i].value);
+                        break;
+                    }
+    }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+</head>
+<body>
+  <h1>Welcome!</h1>
+  <p id="welcome-msg"></p>
+  <p id="phone-msg"></p>
+  <p id="mobile-msg"></p>
+  <p id="email-msg"></p>
+  <p id="color-msg"></p>
+
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const guestName = urlParams.get('guest-name');
+    const phone = urlParams.get('phone');
+    const mobile = urlParams.get('mobile');
+    const email = urlParams.get('email');
+    const color = urlParams.get('color');
+
+    const welcomeMsg = document.querySelector('#welcome-msg');
+    const phoneMsg = document.querySelector('#phone-msg');
+    const mobileMsg = document.querySelector('#mobile-msg');
+    const emailMsg = document.querySelector('#email-msg');
+
+    welcomeMsg.textContent = `Welcome dear guest ${guestName}!`;
+    phoneMsg.textContent = `Your telephone number is ${phone}.`;
+    mobileMsg.textContent = `Your mobile number is ${mobile}.`;
+    emailMsg.textContent = `Your email is ${email}.`;
+
+    welcomeMsg.style.color = color;
+    welcomeMsg.style.fontSize = '20px';
+    phoneMsg.style.color = color;
+    phoneMsg.style.fontSize = '20px';
+    mobileMsg.style.color = color;
+    mobileMsg.style.fontSize = '20px';
+    emailMsg.style.color = color;
+    emailMsg.style.fontSize = '20px';
+  </script>
+</body>
+</html>

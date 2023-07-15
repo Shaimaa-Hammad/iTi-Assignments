@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <script src="../javascript/lib.js"></script>
+    <script>
+      // Get the cookie values
+      var name = getCookie('name');
+      var color = getCookie('color');
+      var img = getCookie('profilPicSrc');
+      var visits = 1;
+
+      if (hasCookie('visits')) {
+        visits = parseInt(getCookie('visits')) + 1;
+      }
+
+      // Save the number of visits
+      setCookie('visits', visits.toString());
+
+      //Display profile picture
+      document.write('<img src="' + img + '">');
+
+      // Display the welcome message
+      document.write('<h2 style="display: inline-block;">Welcome <span style="color: ' + color + ';">' + name + '</span>, you have visited this site <span style="color: ' + color + ';">' + visits + '</span> times :)</h2>');
+    </script>
+  </body>
+</html>

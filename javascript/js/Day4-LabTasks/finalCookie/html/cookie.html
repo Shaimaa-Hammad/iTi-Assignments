@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Test</title>
+    <style>
+        input {
+            display: block;
+        }
+
+        .gender {
+            display: inline-block;
+            width: 25%;
+        }
+    </style>
+
+    <script defer src="../javascript/lib.js"></script>
+    <script defer src="../javascript/cookie.js"></script>
+</head>
+<body>
+    <label>Enter your name: </label>
+    <input type="text" name="name" id="name"><br><br>
+
+    <label>Enter your age: </label>
+    <input type="text" name="age" id="age"><br><br>
+
+    <label>Select your gender: </label><br><br>
+    <label class="gender">
+        <input type="radio" name="gender" value="male">
+        <img src="../images/1.jpg" alt="male">
+    </label>
+
+    <label class="gender">
+        <input type="radio" name="gender" value="female">
+        <img src="../images/2.jpg" alt="female">
+    </label><br><br>
+
+    <label>Select your favourite color: </label>
+    <select name="color" id="color">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select><br><br><br>
+
+    <input type="button" value="Register" onclick="saveData()">
+</body>
+</html>

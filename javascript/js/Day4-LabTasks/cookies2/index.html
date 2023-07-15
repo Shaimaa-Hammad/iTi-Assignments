@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Greeting Message</title>
+  <script src="cookie.js"></script>
+  <script>
+    if (Cookie.readCookie("visits")) {
+  // User has visited the site before, show greeting message
+  window.open("greeting.html", "_self");
+} else {
+  // User is visiting for the first time, show form to get information
+  window.open("form.html", "_self");
+}
+
+  </script>
+</head>
+<body>
+
+  <h1>Greeting Message</h1>
+
+</body>
+</html>
