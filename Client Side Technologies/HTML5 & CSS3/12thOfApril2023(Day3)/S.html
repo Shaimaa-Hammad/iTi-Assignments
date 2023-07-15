@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Canvas Example</title>
+    <style>
+        #myCanvas {
+            display: block;
+            margin: auto;
+            /* border: 1px solid; */
+        }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+      // get the canvas element and its context
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      
+      // create the outer circle with a blue and white gradient fill
+      var outerCircle = ctx.createLinearGradient(400, 100, 0, canvas.height);
+      outerCircle.addColorStop(0, 'white');
+      outerCircle.addColorStop(1, 'blue');
+      ctx.fillStyle = outerCircle;
+      ctx.beginPath();
+      ctx.arc(250, 250, 250, 0, 2 * Math.PI);
+      ctx.fill();
+      
+      // create the inner circle with a blue and white gradient fill
+      var innerCircle = ctx.createLinearGradient(100, 200, 300, 400);
+      innerCircle.addColorStop(0, 'blue');
+      innerCircle.addColorStop(1, 'white');
+      ctx.fillStyle = innerCircle;
+      ctx.beginPath();
+      ctx.arc(250, 250, 180, 0, 2 * Math.PI);
+      ctx.fill();
+      
+      // add the letter 'S' to the center of the inner circle
+      ctx.font = 'bold 420px sans-serif';
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
+      ctx.fillText('S', 250, 400);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Meme with Text Shadow</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Load image onto canvas
+        var img = new Image();
+        img.src = "./shakespeare-meme.jpg";
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 1000, 500);
+
+            let textStyle = {
+                font: "47px Impact",
+                fillStyle: "white",
+                shadowColor: "black",
+                shadowOffsetX: 5,
+                shadowOffsetY: 3,
+                textAlign: "center",
+            };
+
+            // Add top text to canvas
+            ctx.font = textStyle.font;
+            ctx.fillStyle = textStyle.fillStyle;
+            ctx.shadowColor = textStyle.shadowColor;
+            ctx.shadowOffsetX = textStyle.shadowOffsetX;
+            ctx.shadowOffsetY = textStyle.shadowOffsetY;
+            // ctx.lineWidth = 3;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "top";
+            var topText = "TO MEME OR NOT TO MEME?";
+            ctx.fillText(topText, canvas.width / 2, 10);
+            // ctx.strokeText(topText, canvas.width / 2, 10);
+
+            // Add bottom text to canvas
+            // ctx.font = textStyle.font;
+            // ctx.fillStyle = textStyle.fillStyle;
+            // ctx.shadowColor = textStyle.shadowColor;
+            // ctx.shadowOffsetX = textStyle.shadowOffsetX;
+            // ctx.shadowOffsetY = textStyle.shadowOffsetY;
+            // // ctx.lineWidth = 3;
+            // ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            var bottomText = "THAT IS THE QUESTION";
+            ctx.fillText(bottomText, canvas.width / 2, canvas.height - 10);
+            // ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 10);
+        };
+    </script>
+</body>
+
+</html>

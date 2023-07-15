@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pac-Man</title>
+	<style>
+		.pacman {
+			width: 0;
+			height: 0;
+            margin: auto;
+            margin-top: 100px;
+			border-right: 100px solid transparent;
+			border-top: 100px solid red;
+			border-left: 100px solid red;
+			border-bottom: 100px solid red;
+			border-radius: 100px;
+			position: relative;
+			animation: mouth 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		@keyframes mouth {
+            0% {
+                border-right-color: red;
+            }
+            50% {
+                border-right-color: transparent;
+            }
+            100% {
+                border-right-color: red;
+            }
+		}
+	</style>
+</head>
+<body>
+	<div class="pacman"></div>
+</body>
+</html>

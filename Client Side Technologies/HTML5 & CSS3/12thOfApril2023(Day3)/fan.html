@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas Fan</title>
+    <style>
+      #myCanvas {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <button id="stopButton">Stop</button>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var rectWidth = 50;
+var rectHeight = 100;
+var bladeCount = 5;
+var angle = 0;
+var speed = 10;
+var animate = true;
+
+function draw() {
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw base
+  ctx.beginPath();
+  ctx.moveTo(125, 280);
+  ctx.lineTo(275, 280);
+  ctx.lineTo(275, 360);
+  ctx.lineTo(125, 360);
+  ctx.closePath();
+  ctx.fillStyle = "#333333";
+  ctx.fill();
+
+  // Draw neck
+  ctx.beginPath();
+  ctx.moveTo(175, 180);
+  ctx.lineTo(225, 180);
+  ctx.lineTo(225, 280);
+  ctx.lineTo(175, 280);
+  ctx.closePath();
+  ctx.fillStyle = "#999999";
+  ctx.fill();
+
+  // Save the canvas state
+  ctx.save();
+
+  // Rotate the canvas
+  if (animate) {
+    angle += speed;
+  }
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  ctx.rotate((angle * Math.PI) / 180);
+  ctx.translate(-canvas.width / 2, -canvas.height / 2);
+
+  // Draw fan blades
+  for (var i = 0; i < bladeCount; i++) {
+    ctx.save();
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate((i * 360) / bladeCount * (Math.PI / 180)); // rotate each blade
+    ctx.fillStyle = `rgba(51, 153, 255, ${(i + 1) / 6})`; // set fillStyle with varying opacity
+    ctx.fillRect(-(rectWidth / 10), -(rectHeight / 10), rectWidth, rectHeight);
+    ctx.restore();
+  }
+
+  // Restore the canvas state
+  ctx.restore();
+
+  // Request animation frame
+  if (animate) {
+    window.requestAnimationFrame(draw);
+  }
+}
+
+// Start the animation
+draw();
+
+// Add event listener to the stop button
+var stopButton = document.getElementById("stopButton");
+stopButton.addEventListener("click", function () {
+  if (animate) {
+    animate = false;
+    stopButton.textContent = "Start";
+  } else {
+    animate = true;
+    stopButton.textContent = "Stop";
+    draw();
+  }
+});
+
+    </script>
+  </body>
+</html>

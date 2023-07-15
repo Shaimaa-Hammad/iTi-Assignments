@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation Example</title>
+	<style>
+        input:not([type="submit"]) {
+            width: 200px;
+            height: 30px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 15px ;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            font-size: 18px;
+        }
+
+		input:not([type="submit"]):valid {
+			border: 2px solid green;
+		}
+
+		input:not([type="submit"]):invalid {
+			border: 2px solid red;
+		}
+
+        input:not([type="submit"]):focus {
+			border: 2px solid blue;
+        }
+
+        p {
+            color: grey;
+        }
+
+	</style>
+</head>
+<body>
+	<h1>Change Email Address</h1>
+	<form>
+		<input type="text" id="username" name="username" placeholder="Username" required pattern="[A-Za-z]{1,10}">
+        <p>The required username may only be a series of alphabetical characters and up to 10 characters long.</p>
+		<input type="email" id="email" name="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <p>The required email address may only include the '@' sign and no other special characters.</p>
+		<input type="submit" value="Change">
+	</form>
+</body>
+</html>

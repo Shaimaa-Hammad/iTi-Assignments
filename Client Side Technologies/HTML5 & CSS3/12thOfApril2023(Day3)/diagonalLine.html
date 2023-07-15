@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Animation</title>
+    <style>
+        #myCanvas {
+            border: 1px solid gainsboro;
+            /* width: 500px;
+            height: 500px; */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // var distance = 0;
+        // var angle = 45 * (Math.PI / 180);
+        var x = 0;
+        var y = 0;
+
+        ctx.moveTo(0, 0);
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "brown";
+
+        var line = setInterval(function () {
+            // distance += 5;
+            x += 10;
+            y += 10;
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            if (x >= canvas.width && y >= canvas.height) {
+                clearInterval(line);
+                window.alert("Animation End!")
+            }
+        }, 150);
+    </script>
+</body>
+
+</html>

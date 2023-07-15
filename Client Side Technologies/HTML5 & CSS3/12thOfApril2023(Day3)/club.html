@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club</title>
+    <style>
+        #myCanvas {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+
+        // Create gradient for background
+        let gradient1 = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient1.addColorStop(0, ' #33bbff');
+        gradient1.addColorStop(0.5, 'white');
+        gradient1.addColorStop(0.5, '#87c837');
+        gradient1.addColorStop(1, ' #dbefc3');
+
+        // Fill background with gradient
+        ctx.fillStyle = gradient1;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Create gradient for rect
+        let gradient2 = ctx.createLinearGradient(100, 100, 100, 300);
+        gradient2.addColorStop(0, 'black');
+        gradient2.addColorStop(1, 'transparent');
+
+        // Draw rectangle with three sides
+        ctx.beginPath();
+        ctx.moveTo(100, 300);
+        ctx.lineTo(100, 100);
+        ctx.lineTo(400, 100);
+        ctx.lineTo(400, 300);
+        ctx.closePath();
+        ctx.strokeStyle = gradient2; // set stroke style to gradient2
+        ctx.lineWidth = 3;
+        ctx.stroke(); // draw the lines
+
+        // Draw border around the canvas
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 5;
+        ctx.strokeRect(-200, -200, canvas.width + 400, canvas.height + 400); // set x, y, width and height parameters to create the border
+        
+    </script>
+</body>
+
+</html>
