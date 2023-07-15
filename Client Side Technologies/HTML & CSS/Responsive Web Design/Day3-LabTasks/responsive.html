@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive</title>
+<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="styleSheet">
+<style>
+    #ribbon{
+        height: 60px;
+        width: 100px;
+    }
+
+    #c1 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card {
+        width: 30%;
+    }
+
+    @media screen and (max-width: 767px) {
+        #c1 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .card {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 991px) {
+        #ribbon {
+            height: 20px;
+            width: 130px;
+        }
+    }
+</style>
+</link>
+</head>
+
+<body>
+    <div class="container-md row m-auto justify-content-between">
+        <div>
+            <img  id="ribbon" src="./images/ribbon-svgrepo-com.svg" class="mb-2 text-start ms-md-5 ms-lg-0 d-none d-md-inline" />
+        </div>
+        <!-- <div class="col-md-12 col-lg-3" row-med>
+            <div class="d-flex justify-content-evenly d-lg-block">
+                <div id="c1" class="rounded-circle bg-primary m-auto m-md-0"></div>
+                <div class="rounded-circle bg-warning my-2" style="width: 100px; height: 100px;"></div>
+                <div class="rounded-circle bg-danger mb-2" style="width: 100px; height: 100px;"></div>
+                <div class="rounded-circle bg-success" style="width: 100px; height: 100px;"></div>
+            </div>
+        </div> -->
+
+        <div class="col-md-12 col-lg-3 d-block">
+            <div class="d-flex flex-column flex-md-row flex-lg-column align-items-center justify-content-md-center justify-content-lg-start align-items-lg-start">
+                <div id="c1" class="rounded-circle bg-primary m-auto m-md-0 mt-3 mt-md-0"></div>
+                <div class="d-flex flex-row flex-lg-column justify-content-evenly mt-5 mt-md-0">
+                    <div class="rounded-circle bg-warning mt-2 mx-md-5 mx-lg-0" style="width: 100px; height: 100px;">
+                    </div>
+                    <div class="rounded-circle bg-danger mb-2 mx-5 mx-md-0 my-2 me-md-5 me-lg-0"
+                        style="width: 100px; height: 100px;"></div>
+                    <div class="rounded-circle bg-success my-2 my-lg-0" style="width: 100px; height: 100px;"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12 col-lg-9 pt-2">
+            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ullam eum
+                corporis molestiae quae atque nihil illum praesentium optio vitae magni, iure nam
+                delectus dolor deleniti fugit minima! Rerum, dicta.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nisi unde in nobis
+                distinctio, obcaecati temporibus iure, corporis, dolore velit error ipsum illum.
+                Minus aliquid recusandae ducimus expedita non officiis?
+            </p>
+
+            <div class="row justify-content-between">
+                <img src="./images/1.jpg" class="col-12 col-md-4" />
+                <img src="./images/2.jpg" class="col-12 col-md-4 my-3 my-md-0" />
+                <img src="./images/3.jpg" class="col-12 col-md-4" />
+            </div>
+
+            <div class="row justify-content-between mt-5">
+                <div class="card">
+                    <img src="./images/1.jpg" class="card-img-top mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+
+                <div class="card my-3 my-md-0">
+                    <img src="./images/2.jpg" class="card-img-top mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./images/3.jpg" class="card-img-top mt-2">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-2 border-bottom border-black">
+                <img src="./images/triangle.svg" height="40" />
+            </div>
+
+            <div class="mb-3 d-none d-md-flex justify-content-evenly">
+                <p style="font-size: 50px; width: fit-content;" class="fst-italic">Lorem</p>
+
+                <p class="mt-3 col-9">
+                    ipsum dolor sit amet consectetur adipisicing elit. Quidem asperiores,
+                    repellendus fugiat velit quasi possimus aliquam quos itaque nostrum? Similique sapiente atque,
+                    explicabo amet tempora voluptatum saepe odio soluta tempore!
+                </p>
+            </div>
+
+            <div class="row mt-3 mt-md-0">
+                <video src="./videos/1.mp4" autoplay="true" class="col-12 col-md-7"></video>
+                <p class="col-12 col-md-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sit voluptate
+                    consequatur deserunt asperiores sed corrupti, distinctio reiciendis doloremque soluta,
+                    corporis aliquid. Consequatur totam perspiciatis corporis modi, minus eaque obcaecati.
+                </p>
+            </div>
+
+            <div class="row justify-content-between my-5">
+                <img src="./images/1.jpg" class="col-12 col-md-4" />
+                <img src="./images/2.jpg" class="col-12 col-md-4 my-3 my-md-0" />
+                <img src="./images/3.jpg" class="col-12 col-md-4" />
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

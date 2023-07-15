@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            background-color: #d3d3d3;
+            padding: 20px 0;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width:470px) {
+            .nav {
+                flex-direction: column;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .container {
+            width: 75vw;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 10px;
+            margin: 20px auto;
+        }
+
+        .container>div {
+            border: 2px solid;
+            width: 50%;
+        }
+
+        .foot {
+            background-color: #d3d3d3;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div>Home</div>
+        <div>About</div>
+        <div>Services</div>
+        <div>Contact</div>
+    </div>
+    <div class="container">
+        <div class="ch1">This is a flex item.</div>
+        <div class="ch2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta blanditiis distinctio quos
+            quibusdam quasi reprehenderit? Velit adipisci consectetur sint accusamus est unde! Necessitatibus error at
+            ratione veritatis accusantium fugit quia.</div>
+    </div>
+    <div class="foot">Footer</div>
+</body>
+
+</html>

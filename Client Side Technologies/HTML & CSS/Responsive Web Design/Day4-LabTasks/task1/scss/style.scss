@@ -1,0 +1,57 @@
+// set primary and secondary colors
+$primary-color: #007bff;
+$secondary-color: #ad1d89;
+
+.main {
+  // style h1 to have a primary color
+  &-title {
+    color: $primary-color;
+  }
+
+    // style p to have a secondary color
+    &-subtitle {
+        color: $secondary-color;
+    }
+
+    // style button to have a primary color and secondary color when hover
+    &-btn {
+        background-color: $primary-color;
+        color: white;
+        width: 100px;
+        height: 50px;
+        border-radius: 50px;
+
+        &:hover {
+        background-color: $secondary-color;
+        }
+    }
+}
+
+// for all "font-" classes please use @each
+
+// @each $size in (18px, 16px, 14px) {
+//   .font-#{$size} {
+//     font-size: $size;
+//   }
+// }
+
+$font-sizes: (
+  "font-18px": 18px,
+  "font-16px": 16px,
+  "font-14px": 14px,
+);
+
+@each $class, $size in $font-sizes {
+  .#{$class} {
+    font-size: $size;
+  }
+}
+
+// let this button take the half screen width at tablet and full width mobile screens
+.finish-btn {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+}

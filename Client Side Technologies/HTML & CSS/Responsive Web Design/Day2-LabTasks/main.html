@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            border: 2px solid #5070b5;
+            padding: 5px 10px;
+            height: 75vh;
+            color: white;
+            text-align: center;
+            display: grid;
+            grid-template-areas: "h h h h"
+                "n1 m m n2"
+                "n1 m m n2"
+                "f f f f";
+        }
+
+        .head {
+            padding-top: 20px;
+            grid-area: h;
+            background-color: #5070b5;
+        }
+
+        .nav1 {
+            grid-area: n1;
+            padding-top: 20px;
+            margin:10px 0;
+            background-color: #b95f21;
+        }
+
+        .nav2 {
+            grid-area: n2;
+            padding-top: 20px;
+            margin:10px 0;
+            background-color: #b95f21;
+        }
+
+        .main {
+            grid-area: m;
+            padding-top: 20px;
+            margin:10px 5px;
+            background-color: #81a43c;
+        }
+
+        .foot {
+            grid-area: f;
+            padding-top: 20px;
+            background-color: #5070b5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">HEADER</div>
+        <div class="nav1">SIDENAV</div>
+        <div class="main">MAIN CONTENT</div>
+        <div class="nav2">SIDEBAR</div>
+        <div class="foot">FOOTER</div>
+    </div>
+</body>
+
+</html>

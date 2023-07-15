@@ -1,0 +1,39 @@
+.main-title {
+  color: #007bff;
+}
+.main-subtitle {
+  color: #ad1d89;
+}
+.main-btn {
+  background-color: #007bff;
+  color: white;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+}
+.main-btn:hover {
+  background-color: #ad1d89;
+}
+
+.font-18px {
+  font-size: 18px;
+}
+
+.font-16px {
+  font-size: 16px;
+}
+
+.font-14px {
+  font-size: 14px;
+}
+
+.finish-btn {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .finish-btn {
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

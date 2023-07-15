@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap");
+.login {
+  background-color: #bf6491;
+  height: 70vh;
+  width: 50vw;
+  margin: auto;
+  font-family: "Cairo", sans-serif;
+  color: white;
+  box-shadow: 0px 30px 60px -5px #000;
+  border-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .login {
+    height: 90vh;
+    width: 70vw;
+  }
+}
+
+.signin {
+  width: 155px;
+  padding-top: 20px;
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 35px;
+  border-bottom: 2px solid #4c1f96;
+}
+
+.flex-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: -20px;
+}
+@media screen and (max-width: 1200px) {
+  .flex-inputs {
+    flex-direction: column;
+    align-items: center;
+    margin-left: -23px;
+    height: 200px;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+  opacity: 0.8;
+  display: inline-block;
+  padding-left: 30px;
+  transition: all 0.5s ease-in-out;
+}
+
+.text {
+  border: none;
+  width: 100%;
+  margin: auto;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.text:focus {
+  background-color: #bf6491;
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.custom-checkbox {
+  position: relative;
+  top: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 85px;
+}
+@media screen and (max-width: 1200px) {
+  .custom-checkbox {
+    margin-left: 100px;
+    top: -15px;
+  }
+}
+.custom-checkbox:checked {
+  background-color: #4c1f96;
+  transition: all 0.35s ease-in-out;
+}
+.custom-checkbox:checked:after {
+  content: "✔";
+  font-size: 10px;
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  color: #fff;
+}
+
+.checkbox {
+  display: inline-block;
+  padding-top: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .checkbox {
+    position: relative;
+    top: -20px;
+  }
+}
+
+.signinB {
+  background-color: #4c1f96;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1200px) {
+  .signinB {
+    width: 90%;
+  }
+}
+.signinB:hover {
+  background: #7534df;
+  box-shadow: 0px 4px 35px -5px #7534df;
+  cursor: pointer;
+}
+
+hr {
+  position: relative;
+  top: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  width: 80%;
+}
+
+a {
+  text-align: center;
+  display: block;
+  top: 15px;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
+@media screen and (max-width: 1200px) {
+  a {
+    top: 10px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
